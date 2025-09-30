@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CyberTech Electronics</title>
+    <style>
+        /* Base */
+        :root {
+            --primary: #1e32e9;
+            --primary-dark: #1e32e9;
+            --muted: #607d8b;
+            --muted-dark: #4d6470;
+            --bg: #f0f0f0;
+            --text: #333;
+            --card-bg: #fff;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+        }
+
+        a { color: inherit; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        header.site-header {
+            background: var(--primary);
+            color: #fff;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+        nav.primary-nav {
+            margin-left: auto;
+        }
+        nav.primary-nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 12px;
+        }
+        nav.primary-nav a {
+            display: inline-block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #ebebeb;
+            border-radius: 4px;
+        }
+        nav.primary-nav a:hover,
+        nav.primary-nav a:focus {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .hero {
+            background: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+        .hero h1 {
+            margin: 0 0 8px;
+            font-size: 2rem;
+        }
+        .hero p {
+            margin: 0 0 12px;
+            color: #555;
+        }
+        .hero img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+      
+        section {
+            padding: 24px 0;
+        }
+        section h2 {
+            margin: 0 0 12px;
+            font-size: 1.5rem;
+        }
+
+       
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px 20px;
+            padding-left: 18px; 
+        }
+
+        
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+        .product-card:hover { transform: translateY(-4px); }
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .product-title {
+            font-size: 1.1em;
+            margin: 10px 0 4px;
+        }
+        .product-price {
+            color: var(--primary);
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 6px 0 10px;
+        }
+        .btn {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 4px 6px 0 0;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+        }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-secondary {
+            background-color: var(--muted);
+            color: #fff;
+        }
+        .btn-secondary:hover { background-color: var(--muted-dark); }
+
+        table.pricing {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table.pricing th, table.pricing td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table.pricing thead th {
+            background: var(--primary);
+            color: #fff;
+        }
+        table.pricing tbody tr:nth-child(odd) {
+            background: #fafafa;
+        }
+        table.pricing caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+       
+        aside.sidebar {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .sidebar img {
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        
+        footer.site-footer {
+            background: #111;
+            color: #eee;
+            padding: 20px 0;
+            margin-top: 24px;
+        }
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+        .footer-inner a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        .copyright {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner,
+            .grid-2,
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+            .copyright { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <div class="logo" aria-label="Electronic Shop logo">CyberTech Electronics </div>
+            <nav class="primary-nav" role="navigation" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://tyronet254.github.io/24-3002/" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main id="main" class="container" role="main">
+     ->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-inner">
+                <article>
+                    
+                    <h1 id="hero-title">CyberTech Electronics</h1>
+                    
+                    <p>Welcome to CyberTech Electronics — your one-stop destination for quality gadgets at great prices. Explore our curated selection of smartphones, laptops, wearables, and accessories, all backed by expert support and fast delivery.</p>
+                    
+                    <h2>Our Services</h2>
+                    <ul class="services-list">
+                        <li>Smartphone sales and trade-ins</li>
+                        <li>Laptop upgrades and customization</li>
+                        <li>Smart watch and fitness tracker accessories</li>
+                        <li>Same-day delivery in select areas</li>
+                        <li>Certified repairs and technical support</li>
+                    </ul>
+                </article>
+                
+                <img src="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg"
+                     alt="High-end smartphone displayed on a desk with accessories" />
+            </div>
+        </section>
+
+       
+        <section aria-labelledby="featured-products-title">
+            <h2 id="featured-products-title">Featured Products</h2>
+            <div class="product-list">
+                <article class="product-card">
+                    <img src="https://images.pexels.com/photos/30466740/pexels-photo-30466740.jpeg"
+                         alt="Black smartphone on a wooden surface" class="product-image">
+                    <h3 class="product-title">Smartphone</h3>
+                    <p>High-end smartphone with advanced features</p>
+                    <p class="product-price">Ksh 100,000</p>
+                    <button class="btn btn-primary" type="button">Buy Now</button>
+                    <a href="#" class="btn btn-secondary">View Details</a>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.pexels.com/photos/7974/pexels-photo.jpg"
+                         alt="Sleek laptop with backlit keyboard on a desk" class="product-image">
+                    <h3 class="product-title">Laptop</h3>
+                    <p>Powerful laptop for professional use</p>
+                    <p class="product-price">Ksh 130,000</p>
+                    <button class="btn btn-primary" type="button">Buy Now</button>
+                    <a href="#" class="btn btn-secondary">View Details</a>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.pexels.com/photos/437038/pexels-photo-437038.jpeg"
+                         alt="Smart watch showing health stats" class="product-image">
+                    <h3 class="product-title">Smart Watch</h3>
+                    <p>Health monitoring smart watch</p>
+                    <p class="product-price">Ksh 7,000</p>
+                    <button class="btn btn-primary" type="button">Buy Now</button>
+                    <a href="#" class="btn btn-secondary">View Details</a>
+                </article>
+            </div>
+        </section>
+
+       
+        <section aria-labelledby="pricing-title">
+            <h2 id="pricing-title">Product & Service Pricing</h2>
+            
+            <table class="pricing" style="border:1px solid #ccc;">
+                <caption>Top Picks — Prices and Customer Ratings</caption>
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price (Ksh)</th>
+                    <th>Rating</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Samsung Galaxy S25 Ultra (128GB)</td>
+                    <td>100,000</td>
+                    <td>★★★★☆ (4.0)</td>
+                </tr>
+                <tr>
+                    <td>Hp Spectre X360 (16GB/512GB)</td>
+                    <td>130,000</td>
+                    <td>★★★★☆ (4.5)</td>
+                </tr>
+                <tr>
+                    <td>Oraimo Smart Watch Series X</td>
+                    <td>7,000</td>
+                    <td>★★★☆☆ (3.8)</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+        <section class="grid-2" aria-labelledby="tutorial-title">
+            <article>
+                <h2 id="tutorial-title">Quick Setup Tutorial</h2>
+                <p>This short tutorial walks you through unboxing a new smartphone, initial configuration, connecting to Wi‑Fi, and installing essential apps.</p>
+                
+                
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-rr0XRBEIDk?si=vclywBHkW4zs_BqK" 
+  title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </article>
+
+            <aside class="sidebar" aria-label="Connect and Updates">
+                <h3>Contact us on WhatsApp</h3>
+                <p>For inquiries and support, reach out to us on WhatsApp.</p>
+                <a href="https://wa.me/254711300244" target="_blank" rel="noopener" class="btn btn-primary">Chat on WhatsApp</a>
+                <img src="https://images.pexels.com/photos/8204373/pexels-photo-8204373.jpeg"
+                     alt="Customer service representative with curly hair wearing a headset and yellow shirt, sitting at a desk in a modern office environment. Another person in a blue shirt is working nearby. The atmosphere appears professional and focused." >
+            </aside>
+        </section>
+
+        
+        
+    </main>
+
+   
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div>
+                <strong>Contact</strong><br>
+                Email: support@cybertechelectronics@gmail.com<br>
+                Phone: +254 711 300 244
+            </div>
+            <div class="copyright">
+                © <span id="year"></span> CyberTech Electronics. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
