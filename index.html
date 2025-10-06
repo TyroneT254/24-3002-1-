@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CyberTech Electronics</title>
     <style>
-        /* Base */
+
         :root {
             --primary: #1e32e9;
             --primary-dark: #1e32e9;
@@ -31,6 +31,117 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 16px;
+        }
+
+        /* 
+           TASK 1: STYLING A PAGE HEADER
+         */
+        h1 {
+            color: red;              
+            text-align: center;      
+            font-family: Arial, sans-serif;
+        }
+
+        /* 
+           TASK 2: CREATING A HIGHLIGHT CLASS
+           
+            */
+        .highlight {
+            font-weight: bold;        
+            background-color: yellow; 
+            font-size: 20px;         
+        }
+
+        /* 
+           TASK 3: BOX MODEL PRACTICE
+           
+         */
+        .box-model-demo {
+            margin: 20px;             
+            padding: 10px;           
+            border: 2px solid black;  
+        }
+
+        /*
+           TASK 5: BACKGROUND IMAGE
+          
+            */
+        .banner {
+            width: 100%;              
+            height: 300px;
+            background-image: url('https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; 
+            border-radius: 8px;  
+            margin: 20px 0;   
+        }
+
+        
+
+        /* 
+           TASK 7: ABSOLUTE VS RELATIVE POSITIONING
+         */
+       
+        .relative-container {
+            position: relative;       
+            width: 100%;              
+            height: 200px;            
+            background-color: #e0e0e0; 
+            margin: 20px 0; 
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Child element with absolute positioning */
+        .absolute-box {
+            position: absolute;      
+            top: 20px;              
+            right: 20px;              
+            width: 150px;   
+            height: 100px;       
+            background-color: coral; 
+            display: flex;  
+            align-items: center;  
+            justify-content: center; 
+            border-radius: 6px;
+            font-weight: bold;  
+        }
+
+        /* 
+           TASK 8: USING DIFFERENT CSS UNITS
+           Paragraphs demonstrating px, em, and rem units
+            */
+        
+        .units-container {
+            background: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #eee;
+        }
+/*TASK 10: COLOR FORMATS
+*/
+        /* Paragraph using px (pixels)  */
+        .px-unit {
+            font-size: 18px;         
+            margin: 10px 0;
+            color: rgb(255,0,0);    
+        }
+
+        /* Paragraph using em - relative to parent element's font size */
+        .em-unit {
+            font-size: 1.5em;        
+            margin: 10px 0;
+            color: #00ff00;          
+        }
+
+        /* Paragraph using rem - relative to root element's font size */
+        .rem-unit {
+       
+            font-size: 1.5rem;         
+            margin: 10px 0;
+            color: hsl(240, 100%, 50%); 
         }
 
         header.site-header {
@@ -143,19 +254,22 @@
             font-weight: bold;
             margin: 6px 0 10px;
         }
+        /* Task 6 TRANSITION EFFECT */ 
         .btn {
-            padding: 10px 14px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 4px 6px 0 0;
-            transition: all 0.2s ease;
+             background-color: blue;   
+            color: white;             
+            padding: 15px 30px;       
+            border: none;   
+            cursor: pointer; 
+            font-size: 16px;  
+            border-radius: 4px;  
+            transition: background-color 0.5s ease; 
         }
         .btn-primary {
             background-color: var(--primary);
             color: #fff;
         }
-        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-primary:hover {  background-color: green;  /* Task 6 TRANSITION EFFECT  Green background on hover */ }
         .btn-secondary {
             background-color: var(--muted);
             color: #fff;
@@ -223,11 +337,23 @@
             color: #aaa;
         }
 
-        
+        /*
+           TASK 9: GRID OR FLEX LAYOUT
+           */
         .grid-2 {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
+            display: grid;           
+            grid-template-columns: 2fr 1fr;  /* Two columns: left is 2x wider than right */
+            gap: 20px;                /* 20px gap between columns */
+        }
+
+        /* 
+           TASK 4: RESPONSIVE DESIGN
+           Media query to change body background to light blue on screens < 600px
+     */
+        @media (max-width: 600px) {
+            body {
+                background-color: lightblue; /* Light blue background for small screens */
+            }
         }
 
         @media (max-width: 900px) {
@@ -260,14 +386,17 @@
 
     
     <main id="main" class="container" role="main">
-     ->
+        <!-- TASK 1 APPLIED: The h1 below now has red color, center alignment, and Arial font -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-inner">
                 <article>
                     
                     <h1 id="hero-title">CyberTech Electronics</h1>
                     
-                    <p>Welcome to CyberTech Electronics — your one-stop destination for quality gadgets at great prices. Explore our curated selection of smartphones, laptops, wearables, and accessories, all backed by expert support and fast delivery.</p>
+                    <!-- TASK 2 APPLIED: Paragraph with .highlight class -->
+                    <p class="highlight">Welcome to CyberTech Electronics — your one-stop destination for quality gadgets at great prices.</p>
+                    
+                    <p>Explore our curated selection of smartphones, laptops, wearables, and accessories, all backed by expert support and fast delivery.</p>
                     
                     <h2>Our Services</h2>
                     <ul class="services-list">
@@ -283,6 +412,55 @@
                      alt="High-end smartphone displayed on a desk with accessories" />
             </div>
         </section>
+
+        <!-- TASK 3 APPLIED: Box Model  Section -->
+        <section aria-labelledby="box-model-title">
+            <h2 id="box-model-title"></h2>
+            <div class="box-model-demo">
+               CHECK OUT OUR LATEST GADGETS AND OFFERS!
+            </div>
+        </section>
+
+        <!-- TASK 5 APPLIED: Background Image -->
+        <section aria-labelledby="banner-title">
+           
+            <div class="banner"></div>
+            
+        </section>
+
+
+        <!-- TASK 7 APPLIED: Absolute vs Relative Positioning -->
+        <section aria-labelledby="positioning-title">
+            <h2 id="positioning-title">WHY SHOP WITH US ? </h2>
+            <p>At CyberTech Electronics, we're committed to delivering premium technology products combined with exceptional customer service. Our store offers a seamless shopping experience whether you're upgrading your smartphone, investing in a powerful laptop, or exploring the latest wearable technology.</p>
+            <div class="relative-container">
+                <p style="margin: 10px;">
+                    Every product at CyberTech Electronics undergoes rigorous quality verification before reaching our shelves. We partner directly with authorized manufacturers and distributors to guarantee 100% authentic electronics. From flagship smartphones to professional-grade laptops, each device comes with official warranties, genuine accessories, and our commitment to your satisfaction. 
+                </p>
+                <div class="absolute-box">VERIFIED AUTHENTIC</div>
+            </div>
+        </section>
+
+        <!-- TASK 8 USING DIFFERENT CSS UNITS  -->
+        <section aria-labelledby="units-title">
+            <h2 id="units-title">Why Choose CyberTech Electronics</h2>
+            
+            <div class="units-container" style="font-size: 16px;">
+                <h3>INNOVATION AND TECHNOLOGY FOCUS</h3>
+                <p class="px-unit">At CyberTech Electronics, we're passionate about bringing you the latest innovations in consumer technology. Our carefully curated selection features cutting-edge smartphones with revolutionary camera systems, high-performance laptops engineered for productivity, and smart wearables that seamlessly integrate into your digital lifestyle. Each product in our inventory undergoes rigorous quality checks to ensure you receive only authentic, premium-grade electronics. Whether you're a tech enthusiast seeking the newest flagship device, a professional requiring reliable tools for your work, or someone looking to upgrade their everyday gadgets, our diverse range caters to every need and budget. We stay ahead of market trends to offer you tomorrow's technology today, with competitive pricing that makes premium electronics accessible to everyone.</p>
+                <p class="em-unit">At CyberTech Electronics, we're passionate about bringing you the latest innovations in consumer technology. Our carefully curated selection features cutting-edge smartphones with revolutionary camera systems, high-performance laptops engineered for productivity, and smart wearables that seamlessly integrate into your digital lifestyle. Each product in our inventory undergoes rigorous quality checks to ensure you receive only authentic, premium-grade electronics. Whether you're a tech enthusiast seeking the newest flagship device, a professional requiring reliable tools for your work, or someone looking to upgrade their everyday gadgets, our diverse range caters to every need and budget. We stay ahead of market trends to offer you tomorrow's technology today, with competitive pricing that makes premium electronics accessible to everyone.</p>
+                <p class="rem-unit">At CyberTech Electronics, we're passionate about bringing you the latest innovations in consumer technology. Our carefully curated selection features cutting-edge smartphones with revolutionary camera systems, high-performance laptops engineered for productivity, and smart wearables that seamlessly integrate into your digital lifestyle. Each product in our inventory undergoes rigorous quality checks to ensure you receive only authentic, premium-grade electronics. Whether you're a tech enthusiast seeking the newest flagship device, a professional requiring reliable tools for your work, or someone looking to upgrade their everyday gadgets, our diverse range caters to every need and budget. We stay ahead of market trends to offer you tomorrow's technology today, with competitive pricing that makes premium electronics accessible to everyone.</p>
+            </div>
+            
+            <div class="units-container" style="font-size: 24px;">
+                <h3>Customer Service & Support Focus</h3>
+                <p class="px-unit">What sets CyberTech Electronics apart is our unwavering commitment to customer satisfaction beyond the point of sale. Our team of certified technicians and product specialists provides comprehensive support throughout your ownership journey. We offer flexible warranty options, hassle-free returns within 30 days, and same-day delivery services in select metropolitan areas. Our dedicated customer care center operates seven days a week through multiple channels including phone, email, WhatsApp, and live chat. Your satisfaction isn't just our goal—it's our guarantee.</p>
+                <p class="em-unit">What sets CyberTech Electronics apart is our unwavering commitment to customer satisfaction beyond the point of sale. Our team of certified technicians and product specialists provides comprehensive support throughout your ownership journey. We offer flexible warranty options, hassle-free returns within 30 days, and same-day delivery services in select metropolitan areas. Our dedicated customer care center operates seven days a week through multiple channels including phone, email, WhatsApp, and live chat. Your satisfaction isn't just our goal—it's our guarantee.</p>
+                <p class="rem-unit">What sets CyberTech Electronics apart is our unwavering commitment to customer satisfaction beyond the point of sale. Our team of certified technicians and product specialists provides comprehensive support throughout your ownership journey. We offer flexible warranty options, hassle-free returns within 30 days, and same-day delivery services in select metropolitan areas. Our dedicated customer care center operates seven days a week through multiple channels including phone, email, WhatsApp, and live chat. Your satisfaction isn't just our goal—it's our guarantee.</p>
+            </div>
+        </section>
+
+        
 
        
         <section aria-labelledby="featured-products-title">
@@ -353,7 +531,7 @@
             </table>
         </section>
 
-        
+        <!-- TASK 9  Grid layout  -->
         <section class="grid-2" aria-labelledby="tutorial-title">
             <article>
                 <h2 id="tutorial-title">Quick Setup Tutorial</h2>
